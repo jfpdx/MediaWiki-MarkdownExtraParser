@@ -117,13 +117,13 @@ if ( defined( 'MEDIAWIKI' ) ) {
  * 
  * @uses MarkdownExtra_Parser
  */
-class MarkdownExtraOverride extends MarkdownExtra_Parser {
+class MarkdownExtraOverride extends Markdown_Parser {
 
 	/**
 	 * Overwrite the paragraph former so we don't
 	 * get paragraph tags in weird places (like the title tag)
 	 * 
-	 * @see \MarkdownExtra_Parser::formParagraphs
+	 * @see \Markdown_Parser::formParagraphs
 	 */
 	function formParagraphs($text) {
 	#
@@ -164,7 +164,7 @@ class MarkdownExtraOverride extends MarkdownExtra_Parser {
 	 * Overwrite the code and pre order
 	 * (code, then pre.... not the other way around)
 	 * 
-	 * @see \MarkdownExtra_Parser::_doCodeBlocks_callback
+	 * @see \Markdown_Parser::_doCodeBlocks_callback
 	 */
 	function _doCodeBlocks_callback($matches) {
 		$codeblock = $matches[1];
